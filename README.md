@@ -3,8 +3,8 @@
 
 ### server layout
 
-see docs/Server_Layout.md
+[Server Layout](docs/Server_Layout.md)
 
 ### volumes configuration
 
-see docs/Volumes_Config.md
+[Volumes](docs/Volumes_Config.md)

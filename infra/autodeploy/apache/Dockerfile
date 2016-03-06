@@ -19,7 +19,7 @@ MAINTAINER Toon Lamberigts and Tomas Vercautter
 
 # Copy custom config file for nginx
 # COPY FROM (host) TO (container) (kan path instellen, moet niet huidige dir zijn)
-COPY src/panoramaViewer/ /usr/local/apache2/htdocs/
+COPY src/ /usr/local/apache2/htdocs/
 
 # Expose necessary ports
 # Allow access to this container on port 80
