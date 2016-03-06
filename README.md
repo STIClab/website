@@ -3,8 +3,8 @@
 
 ### server layout
 
-[Server Layout](/docs/Server_Layout.md)
+[Server Layout](./docs/Server_Layout.md)
 
 ### volumes configuration
 
-[Volumes](/docs/Volumes_Config.md)
+[Volumes](./docs/Volumes_Config.md)
