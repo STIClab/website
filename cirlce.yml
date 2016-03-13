@@ -31,4 +31,4 @@ deployment:
   dev:
     branch: master
     commands:
-      - echo "done"
+      - ping $IP
