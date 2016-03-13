@@ -20,7 +20,6 @@ dependencies:
     - sudo cp infra/config/$CIRCLE_BRANCH/* config/
     - MK_CONFIG=config make docker_build
 
-
 ## Customize test commands
 test:
   override:
@@ -29,6 +28,7 @@ test:
 
 ## Customize deployment commands
 deployment:
-  dev:
+  production:
     branch: master
     commands:
+      - ping $IP
