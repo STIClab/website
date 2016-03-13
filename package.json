@@ -1,0 +1,8 @@
+{
+    "name": "WebsiteSTIC",
+    "version": "1.0.0",
+    "keywords": ["STIC", "Students", "Technology", "Inovation", "Community"],
+    "author": "",
+    "contributors": [Tomas Vercauter, Simon Van Cauter],
+    "dependencies": {}
+}
