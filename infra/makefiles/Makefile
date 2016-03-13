@@ -45,7 +45,7 @@ nginx_cleanup:
 ####
 
 apache_config_push:
-	scp infra/apache/ $(CONNECT):$(AP_CONFIGPATH)
+	scp ../apache/httpd.conf $(CONNECT):$(AP_CONFIGPATH)
 
 ####
 # docker-gen-nginx
