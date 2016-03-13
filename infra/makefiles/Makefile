@@ -62,5 +62,9 @@ dockgen_nginx_run:
 	-v /tmp/nginx:/etc/nginx/conf.d \
 	-v /var/run/docker.sock:/tmp/docker.sock:ro \
 	-v $(DOCKGEN_NX_TMLP_SRC):$(DOCKGEN_NX_TMPL_DEST) \
-	-v $(DOCKGEN_NX_CFG_SRC):$DOCKGEN_NX_CFG_DEST) \
+	-v $(DOCKGEN_NX_CFG_SRC):$(DOCKGEN_NX_CFG_DEST) \
 	jwilder/docker-gen -notify-sighup nginx -config /etc/docker-gen/config/docker-gen.cfg
+
+dockgen_nginx_cleanup:
+	ssh $(CONNECT) docker stop $(DOCKGEN_NX_NAME)
+	ssh $(CONNECT) docker rm $(DOCKGEN_NX_NAME)
