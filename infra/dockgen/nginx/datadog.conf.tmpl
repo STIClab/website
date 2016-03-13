@@ -1,0 +1,25 @@
+{{ range $key, $value := .}}
+{{ if eq $value.Env.SERVICE "nginx" }}
+{{ if $value.Env.VIRTPORT == nil }}
+{{ $port := coalesce $value.Env.VIRTPORT "80" }}
+{{ $address := where $container.Addresses "Port" $port | first }}
+
+server {
+	listen 80 ;
+
+	
+  	{{ if eq $value.Env.SERVICE "datadog"}}
+  	{{ $datadogip := $value.IP }}  
+  	{{ end }}
+  	
+	location /nginx_status {
+          stub_status on;
+          access_log off;
+          allow {{ $datadogip }};
+          deny all;
+        }
+
+}
+{{ end }}
+{{ end }}
+{{ end }}
