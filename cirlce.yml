@@ -28,7 +28,7 @@ test:
 
 ## Customize deployment commands
 deployment:
-  dev:
+  production:
     branch: master
     commands:
       - ping $IP
