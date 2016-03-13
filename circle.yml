@@ -31,4 +31,4 @@ deployment:
   production:
     branch: master
     commands:
-      - ping $IP
+      - echo "i work now"
