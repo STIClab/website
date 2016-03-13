@@ -5,9 +5,7 @@
 ifndef MK_CONFIG
 $(info MK_CONFIG is not defined)
 else
-include $(MK_CONFIG)/ssh.cfg
-include $(MK_CONFIG)/container.cfg
-include $(MK_CONFIG)/deploy.cfg
+include $(MK_CONFIG)/setup.cfg
 endif
 
 

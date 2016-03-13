@@ -13,6 +13,13 @@ nginx_cleanup:
 	ssh $(CONNECT) docker rm $(NX_NAME)
 
 ####
+# apache
+####
+
+apache_config_push:
+	scp infra/apache/ $(CONNECT):$(AP_CONFIGPATH)
+
+####
 # docker-gen-nginx
 ####
 
