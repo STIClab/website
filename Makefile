@@ -13,6 +13,8 @@ endif
 # concatenate vars
 ####
 
+# full file name for tarbal
+TARNAME = $(IMAGE_NAME).tar
 # full image name
 IMAGE = $(IMAGE_NAME):$(IMAGE_VERSION)
 # full ssh connect vars
@@ -25,10 +27,6 @@ endif
 ####
 # Make commands
 ####
-
-
-echo_test:
-	echo $(REMOTE_USER_NAME)
 
 docker_build:
 	docker build -t $(IMAGE) -f $(DOCKERFILEPATH) .
@@ -51,8 +49,14 @@ s3_upload:
 	s3cmd del s3://$(S3_BUCKET)/images/$(TARNAME)
 	s3cmd put $(TARNAME) s3://$(S3_BUCKET)/images/$(TARNAME)
 
+image_upload:
+	scp $(TARNAME) $(CONNECT):$(TARNAME) 
+
 remote_s3_download:
 	ssh $(CONNECT) AWS_ACCESS_KEY_ID=$(S3_ACCESS_KEY) AWS_SECRET_ACCESS_KEY=$(S3_SECRET_KEY) ./gof3r cp --no-md5 --endpoint=s3-eu-west-1.amazonaws.com s3://$(S3_BUCKET)/images/$(TARNAME) /home/core/$(TARNAME)
+	ssh $(CONNECT) docker load -i $(TARNAME)
+
+image_unpack:
 	ssh $(CONNECT) docker load -i $(TARNAME)
 
 docker_remove_containers:
@@ -66,4 +70,4 @@ docker_loop_cleanup: docker_remove_containers docker_remove_images
 docker_loop_deploy:
 	for i in `seq 1 $(HOSTS)`; do  ssh $(CONNECT) docker run -d --name $(CONTAINER)$$i --expose $(EXPOSEPORT) -v $(AP_CONFIGPATH):/usr/local/apache2/conf/httpd.conf $(E_VIRTUAL_HOST) $(IMAGE); done;
 
-docker_deploy: remote_s3_download docker_loop_cleanup docker_loop_deploy
+docker_deploy: image_unpack docker_loop_cleanup docker_loop_deploy

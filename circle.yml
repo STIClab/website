@@ -31,4 +31,6 @@ deployment:
   production:
     branch: master
     commands:
-      - echo "i work now"
+      - MK_CONFIG=config make docker_save
+      - MK_CONFIG=config make image_upload
+      - MK_CONFIG=config make docker_deploy
