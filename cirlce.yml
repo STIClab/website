@@ -13,18 +13,22 @@ checkout:
 ## Customize dependencies
 dependencies:
   pre:
+    - sudo apt-get update; sudo apt-get install s3cmd 
   override:
+    - docker info
+    - sudo mkdir config
+    - sudo cp infra/config/$CIRCLE_BRANCH/* config/
+    - MK_CONFIG=config make docker_build
 
 
 ## Customize test commands
 test:
   override:
+    - MK_CONFIG=config make docker_run
+    - MK_CONFIG=config make docker_curltest
 
 ## Customize deployment commands
 deployment:
   dev:
     branch: master
-    commands:
-  release:
-    branch: release
     commands:
