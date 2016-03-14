@@ -3,6 +3,11 @@
 
 ### CoreOS:
 
+#### Apache:
+
+* Main config file: `/home/core/config/apache/httpd.conf` (Mounted on apache container)
+    - Apache container dest: `/usr/local/apache2/conf/httpd.conf`
+
 #### Nginx:
 
 * Generated Config files: `/tmp/nginx/` (Mounted on nginx and dockgen container)
@@ -17,11 +22,6 @@
     - Dock-gen nginx dest: `/etc/docker-gen/docker-gen.cfg`
 * Templates: `/home/core/templates/nginx/` 
     - Dock-gen nginx dest: `/etc/docker-gen/templates/`
-
-#### Apache:
-
-* Main config file: `/home/core/config/apache/httpd.conf` (Mounted on apache container)
-    - Apache container dest: `/usr/local/apache2/conf/httpd.conf`
 
 #### Datadog:
 
