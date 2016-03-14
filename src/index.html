@@ -3,6 +3,10 @@
     <head>
         <title>STIC</title>
         <meta charset="utf-8">
+        <meta name="Author" Content="Simon Van Cauter">
+        <meta name="Keywords" content="STIC, Students, Technology, Innovation, Community">
+        <meta Name="Description" Content="Community for students to design and develop innovatve projects around technology">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--Local jQuery-->
@@ -12,12 +16,14 @@
 
         <!--Local Bootstrap link-->
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <script src="js/vendor/bootstrap.min.js"></script>
         <!--Production bootstrap link-->
         <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
 
         <!--Fonts-->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <!--<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">-->
         <!--<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">-->
 
@@ -26,7 +32,7 @@
 
         <!--Local Javascript-->
         <script src="js/main.js"></script>
-        
+
         <!--Temperary style tests-->
         <style>
             .container {
@@ -34,63 +40,80 @@
             }
         </style>
     </head>
-    <body>
+    <body id="home">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#myPage">STIC</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#home">HOME</a></li>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#blog">BLOG</a></li>
-                        <li><a href="#services">SERVICES</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="#home" data-toggle="collapse" data-target=".navbar-collapse.in">HOME</a></li>
+                        <li><a href="#about" data-toggle="collapse" data-target=".navbar-collapse.in">ABOUT</a></li>
+                        <li><a href="#blog" data-toggle="collapse" data-target=".navbar-collapse.in">BLOG</a></li>
+                        <li><a href="#services" data-toggle="collapse" data-target=".navbar-collapse.in">SERVICES</a></li>
+                        <li><a href="#contact" data-toggle="collapse" data-target=".navbar-collapse.in">CONTACT</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div id="home" class="jumbotron">
+        <!-- Main jumbotron for a primary marketing message or call to action 
+        <div class="jumbotron">
             <div class="container">
                 <h1>STIC</h1>
             </div>
-        </div>
+        </div>-->
 
         <!--About section -->
-        <div id="about" class="container">
+        <section id="about" class="container">
             <h2>ABOUT</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
-        </div>
+        </section>
         <!--About section -->
-        <div id="blog" class="container">
+        <section id="blog" class="container">
             <h2>BLOG</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
-        </div>
+        </section>
         <!--About section -->
-        <div id="services" class="container">
+        <section id="services" class="container">
             <h2>SERVICES</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
-        </div>
+        </section>
         <!--About section -->
-        <div id="contact" class="container">
+        <section id="contact" class="container">
             <h2>Contact</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst.</p>
-        </div>
+        </section>
 
-        <footer>
-            <p>&copy; STIC</p>
+        <footer class="text-center">
+            <div class="container text-center">
+                <ul class="list-inline social-buttons">
+                    <li><a href="https://www.facebook.com/sticlabs/?fref=ts"
+                           target="_blank" class="btn btn-block btn-social btn-facebook">
+                            <i class="fa fa-facebook fa-2x"></i>
+                        </a></li>
+                    <li><a href="https://twitter.com/"
+                           target="_blank" class="btn btn-block btn-social btn-twitter">
+                            <i class="fa fa-twitter fa-2x"></i>
+                        </a></li>
+                    <li><a href="https://github.com/STIClab"
+                           target="_blank" class="btn btn-block btn-social btn-github">
+                            <i class="fa fa-github fa-2x"></i>
+                        </a></li>
+                </ul>
+                <hr>
+                <p>&copy; STIC 2016</p>
+            </div>
         </footer>
     </body>
 </html>
